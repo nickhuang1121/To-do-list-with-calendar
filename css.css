@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap');
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'0,
+        'wght'400,
+        'GRAD'0,
+        'opsz'48
+}
+
+
+body {
+    background: lightcoral;
+}
+
+#app {
+    margin: 0 auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    border-radius: 20px;
+}
+
+.creatNewBoard {
+    display: flex;
+}
+
+#userNewToDoContent {
+    display: inline-block;
+    padding: 10px;
+    width: calc(100% - 50px);
+    height: 100%;
+    border: none;
+    background: lightgray;
+    border-radius: 10px;
+}
+
+#saveUserNewToDoContent {
+    display: inline-block;
+    padding: 10px;
+    width: 50px;
+    height: 100%;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#listBoard {
+    margin: 0;
+    padding: 10px 0;
+}
+
+#listBoard li {
+
+    position: relative;
+    margin-bottom: 10px;
+    padding: 10px 5px;
+    list-style: none;
+    transition: .8s;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#listBoard li:hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+#listBoard>li>span {
+    position: relative;
+    display: block;
+    padding-left: 25px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    font: 300 15px/1.6 "Noto Sans TC";
+    letter-spacing: 2px;
+    color: black;
+}
+
+#listBoard>li>span::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 5px;
+    transition: .8s;
+}
+
+#listBoard li.checked>span {
+    color: lightgray;
+    text-decoration: line-through;
+}
+
+#listBoard li.checked>span::before {
+    top: 4px;
+    left: 7px;
+    border: none;
+    width: 3px;
+    height: 10px;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-radius: 0;
+    transform: rotate(224deg);
+}
+
+#listBoard>li>span small {
+    display: inline-block;
+    background: lightcyan;
+}
+
+#listBoard input {
+    position: relative;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+}
+
+#listBoard li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    width: 30px;
+    height: 100%;
+    font: 300 15px/1.6 "Noto Sans TC";
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    background: lightgray;
+    z-index: 10;
+}
+
+#listBoard a.delete {
+    right: 0px;
+}
+
+#listBoard a.edit {
+    right: 30px;
+}
+
+.viewTab {
+    display: flex;
+}
+
+.viewTab a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 3);
+    height: 50px;
+    font: 300 15px/1.6 "Noto Sans TC";
+    color: black;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.viewTab a.act {
+    border-bottom: 3px solid lightblue;
+}
+
+li.hide {
+    display: none;
+}
+
+
+
+
+
+
+
+#limitDateBtn {
+    display: none;
+}
+
+#limitDateBtnLabel {
+    margin-top: 10px;
+    box-sizing: ;
+}
+
+#limitDateBtn:checked+#limitDateBtnLabel span {
+    background: lightcoral;
+}
+
+#limitDateBtnLabel {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font: 300 15px/1 "Noto Sans TC";
+    color: black;
+
+}
+
+#limitDateBtnLabel i {
+    display: inline-block;
+    transform: translateY(-3px);
+    text-decoration: none;
+    font-style: normal;
+
+}
+
+#limitDateBtnLabel span {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background: lightgray;
+    border-radius: 99em;
+}
+
+#limitDateBtnLabel span::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 99em;
+}
+
+#limitDateBtn:checked+#limitDateBtnLabel span::after {
+    background: white;
+    left: calc(100% - 19px);
+}
+
+
+
+
+
+
+
+
+/*以下是月曆CSS*/
+#cal {
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    display: none;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 300px;
+    z-index: 100;
+    background: white;
+
+
+}
+
+#cal.act {
+    display: block;
+}
+
+#yearhBoard {
+    font: 300 20px/2 "Noto Sans TC";
+    text-align: center;
+    color: lightcoral;
+
+
+}
+
+#monthBoard {
+    font: 900 20px/2 "Noto Sans TC";
+    text-align: center;
+    color: white;
+    background: lightcoral;
+
+}
+
+#calBoard,
+#weekBoard {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+
+}
+
+#weekBoard li {
+    box-sizing: border-box;
+    padding: 10px;
+    display: inline-block;
+    width: calc(100% / 7);
+    font: 300 15px/1 "Noto Sans TC";
+    text-align: center;
+    color: white;
+    background: lightcoral;
+}
+
+#calBoard li {
+    box-sizing: border-box;
+    padding: 15px;
+    display: inline-block;
+    width: calc(100% / 7);
+    font: 300 20px/1 "Noto Sans TC";
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+#calBoard li.today {
+    color: white;
+    background: lightcoral;
+}
+
+#nextMonth,
+#prevMonth {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 100%;
+    font: 300 10px/1 "Noto Sans TC";
+    color: white;
+    cursor: pointer;
+    background: lightseagreen;
+}
+
+#nextMonth {
+    right: -20px;
+}
+
+#prevMonth {
+    left: -20px;
+}
